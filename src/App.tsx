@@ -7,6 +7,8 @@ import About from './pages/About';
 import News from './pages/News';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import CurrencyExchange from './pages/CurrencyExchange';
+import CryptoExchange from './pages/CryptoExchange';
 
 const App: React.FC = () => {
   const [rates, setRates] = useState<Record<string, number>>({});
@@ -46,6 +48,8 @@ const App: React.FC = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home currencies={currencies} rates={rates} />} />
+          <Route path="/currency" element={<CurrencyExchange rates={rates} />} />
+          <Route path="/crypto" element={<CryptoExchange rates={rates} />} />
           <Route path="/about" element={<About />} />
           <Route path="/news" element={<News />} />
           <Route path="/privacy" element={<Privacy />} />
@@ -54,7 +58,7 @@ const App: React.FC = () => {
 
         {/* Footer */}
         <footer className="bg-white border-t mt-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-4">About ExchangePro</h3>
@@ -63,10 +67,17 @@ const App: React.FC = () => {
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+                <h3 className="text-lg font-semibold mb-4">Exchange Rates</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><a href="/currency" className="text-gray-600 hover:text-blue-600">Currency Exchange</a></li>
+                  <li><a href="/crypto" className="text-gray-600 hover:text-blue-600">Crypto Exchange</a></li>
+                  <li><a href="/news" className="text-gray-600 hover:text-blue-600">Market News</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-4">Company</h3>
                 <ul className="space-y-2 text-sm">
                   <li><a href="/about" className="text-gray-600 hover:text-blue-600">About Us</a></li>
-                  <li><a href="/news" className="text-gray-600 hover:text-blue-600">Market News</a></li>
                   <li><a href="/privacy" className="text-gray-600 hover:text-blue-600">Privacy Policy</a></li>
                   <li><a href="/terms" className="text-gray-600 hover:text-blue-600">Terms of Service</a></li>
                 </ul>
@@ -79,14 +90,6 @@ const App: React.FC = () => {
                   <li>contact@exchangepro.com</li>
                   <li>+1 (555) 123-4567</li>
                 </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-                <div className="flex space-x-4">
-                  <a href="#" className="text-gray-600 hover:text-blue-600">Twitter</a>
-                  <a href="#" className="text-gray-600 hover:text-blue-600">LinkedIn</a>
-                  <a href="#" className="text-gray-600 hover:text-blue-600">Facebook</a>
-                </div>
               </div>
             </div>
             <div className="mt-8 pt-8 border-t text-center text-gray-600">

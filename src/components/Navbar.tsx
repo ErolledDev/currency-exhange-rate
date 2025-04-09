@@ -10,10 +10,10 @@ export default function Navbar() {
 
   const navItems = [
     { path: '/', label: 'Home' },
+    { path: '/currency', label: 'Currency Exchange' },
+    { path: '/crypto', label: 'Crypto Exchange' },
     { path: '/about', label: 'About' },
     { path: '/news', label: 'Market News' },
-    { path: '/privacy', label: 'Privacy Policy' },
-    { path: '/terms', label: 'Terms of Service' },
   ];
 
   return (

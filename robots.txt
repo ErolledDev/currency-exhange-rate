@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://exchangepro.com/sitemap.xml
+
+# Prevent indexing of API endpoints
+Disallow: /api/
